@@ -14,4 +14,9 @@ Proyecto de ejemplo de curso PhoneGap.
 Jonathan D. Ccoicca Jiménez
 </author>
 
+
+<preference name="phonegap-version" value="3.7.1" />
+<gap:plugin name="org.apache.cordova.device" />
+<gap:plugin name="org.apache.cordova.device-motion" />
+
 </widget>
