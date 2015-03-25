@@ -15,7 +15,7 @@ Jonathan D. Ccoicca Jiménez
 </author>
 
 
-<preference name="phonegap-version" value="3.7.0" />
+
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.device-motion" />
 
