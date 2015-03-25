@@ -1,0 +1,485 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+
+<!--JQUERY-MOBILE DEL DREAMWEAVER -->
+
+<!--<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>  -->
+ 
+<!--JQUERY-MOBILE(ÚLTIMA VERSIÓN) PARA IMPORTAR TEMAS
+ --> 
+<link href="jquery-mobile/cursoPG.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="jquery-mobile/jquery.mobile.icons.min.css" type="text/css" />
+<link rel="stylesheet" href="jquery-mobile/jquery.mobile.structure-1.4.5.min.css" type="text/css"/>
+<link rel="stylesheet" href="CSS/estilos.css" type="text/css"/>   
+ <script src="phonegap.js" charset="utf-8" type="text/javascript"></script>
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script> 
+<script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script> 
+ <!--<script src="JS/miJS.js" type="text/javascript"></script> -->
+<script src="JS/testing_PG.js" type="text/javascript"></script>
+
+</head> 
+<body onLoad="onBodyLoad()"> 
+
+<div data-role="page" id="page" data-theme="a">
+	<div data-role="header">
+		<h1>Página uno</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-theme="a">
+			<li><a href="#page2" data-transition="slide" data-add-back-btn="true">Botón Atras</a></li>
+            <li><a href="#page3" data-transition="flip">Descarga</a></li>
+			<li><a href="#page4" data-transition="slidedown">Mail</a></li>
+            <li><a href="#page5" data-rel="dialog">Dialogo</a></li>
+            <li><a href="#page6" data-transition="slideup">Contenido Collapsable</a></li>
+           <li><a href="#page7" data-transition="fade">Acordeon</a></li>
+          <li><a href="#page8" data-transition="pop">Rejilla</a></li>
+          <li><a href="#page9" data-transition="slide">Listas</a></li>
+         <li><a href="#page10" data-transition="slide">Formularios</a></li>
+         <li><a href="#page11" data-transition="slide">Acelerómetro</a></li>
+
+		</ul>		
+	</div>
+	<div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+<div data-role="page" id="page2" data-theme="b">
+	<div data-role="header">
+		<h1>Página dos</h1>
+		<a href="#" data-role="button" data-icon="back" data-rel="back" data-theme="a">Atras</a>
+	</div>
+	<div data-role="content">	
+		Contenido		
+	</div>
+	<div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+<div data-role="page" id="page3" data-theme="c">
+	<div data-role="header">
+		<h1>Página tres</h1>
+        <a href="#" data-role="button" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+        <a href="#page4" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+
+	</div>
+	<div data-role="content">
+	 <a href="http://www.munibarranco.gob.pe/pdf/tributaria/ley-de-tributacion-municipal.pdf"> <input type="image" value="Imagen" src="Imagenes/descarga.png" />	</a>
+			
+	</div>
+	<div data-role="footer" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal" class="dialog_test">
+        <a href="#" data-role="button">Botón 1</a>
+        <a href="#" data-role="button">Botón 2</a>
+        <a href="#" data-role="button">Botón 3</a>
+        </div>
+        
+	</div>
+</div>
+
+<div data-role="page" id="page4" data-theme="d">
+	<div data-role="header">
+		<h1>Página cuatro</h1>
+	</div>
+	<div data-role="content">
+	  <div data-role="controlgroup" data-type="horizontal">
+      <a href="mailto:jonathanccoicca@gmail.com" data-role="button">Envio mail</a>
+      <a href="tel:989919200" data-role="button">Llamar</a>
+      </div>
+		
+				
+	</div>
+	<div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+
+
+<div data-role="page" id="page5">
+	<div data-role="header">
+		<h1>Diálogo</h1>
+	</div>
+	<div data-role="content">
+    
+	
+	    <div data-role="controlgroup" data-type="horizontal" class="dialog_test">
+        <a href="#page" data-direction="reverse" data-role="button">Aceptar</a>
+        <a href="#page" data-direction="reverse" data-role="button">Cancelar</a>
+        </div>
+		
+	</div>
+	<div data-role="footer">
+		
+	</div>
+</div>
+
+
+<div data-role="page" id="page6">
+  <div data-role="header">
+    <h1>Contenido collapsible</h1>
+  </div>
+  
+  <div data-role="content">
+  
+  <div data-role="collapsible">
+  <h2>Contenido 1</h2>
+  
+  <p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+  
+  </div>
+  
+  <div data-role="collapsible">
+  <h2>Contenido 2</h2>
+  
+  <p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+  </div>
+  
+  </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+  
+</div>
+
+
+<div data-role="page" id="page7">
+  <div data-role="header">
+    <h1>Ejemplo de acordeon</h1>
+  </div>
+  <div data-role="content">
+    <div data-role="collapsible-set">
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Encabezado 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+</p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Encabezado 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+</p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Encabezado 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+</p>
+      </div>
+    </div>
+ 
+  </div>
+  
+ <div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+  
+  
+</div>
+
+
+<div data-role="page" id="page8">
+  <div data-role="header">
+    <h1>Rejilla</h1>
+  </div>
+  <div data-role="content">
+    <div class="ui-grid-a">
+      <div class="ui-block-a espaciado"><button>Botón 1</button></div>
+      <div class="ui-block-b espaciado"><button>Botón 2</button></div>
+      <div class="ui-block-a espaciado"><button>Botón 3</button></div>
+      <div class="ui-block-b espaciado"><button>Botón 4</button></div>
+    </div>
+  
+  </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+
+
+<div data-role="page" id="page9">
+  <div data-role="header">
+    <h1>Listas</h1>
+    <a href="#" data-role="button" data-icon="back" data-rel="back" data-iconpos="notext" data-add-back-btn="true"></a>
+  </div>
+  <div data-role="content">
+  
+  <div data-role="collapsible-set">
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Listas Normales</h3>
+<p>
+<ul data-role="listview" data-theme="c">
+<li data-role="list-divider">Set 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+<li data-role="list-divider" data-theme="b">Set 2</li>
+<li>Elemento 5</li>
+
+</ul>
+
+</p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Listas Anidadas</h3>
+<p>
+ <ul data-role="listview">
+      <li>Europa
+          <ul>
+          <li>España</li>
+          <li>Austria</li>
+          <li>Portugal</li>
+          </ul>
+      </li>
+
+      <li>América
+          <ul>
+          <li>Colombia</li>
+          <li>Perú</li>
+          <li>Ecuador</li>
+          </ul>
+      </li>
+
+</ul> 
+
+<ul data-role="listview">  
+            <li><a href="#">Colores <span class="ui-li-count">3</span></a>  
+                <ul>  
+                    <li>Rojo</li>  
+                    <li>Verde</li>  
+                    <li>Azul</li>  
+                </ul>   
+            </li>  
+            <li><a href="#">Ciudades <span class="ui-li-count">2</span></a>  
+                <ul>  
+                    <li>Madrid</li>  
+                    <li>Barcelona</li>   
+                </ul>  
+            </li>  
+        </ul>   
+</p>
+      </div>
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>Listas con opciones</h3>
+<p>
+
+<ul data-role="listview" data-theme="b" data-filter="true" data-filter-placeholder="Busca...">
+<li><a href="#">PhoneGap</a><a href="#"></a></li>
+<li><a href="#"><img src="Imagenes/descarga.png" />Jquery Mobile</a></li>
+<li><a href="#"><img src="Imagenes/descarga.png" class="ui-li-icon" /><h2>PhoneGap Builder</h2>	Servicio Online<p class="ui-li-aside">test</p></a></li>
+<li><a href="#">Dreamweaver<span class="ui-li-count">33</span></a></li>
+<li><a href="#">Edge Code</a></li>
+</ul>
+
+</p>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+
+<div data-role="page" id="page10">
+  <div data-role="header">
+    <h1>Formularios</h1>
+  </div>
+  
+  <div data-role="content">
+  <form action="#" method="get">
+  
+  <div data-role="fieldcontain">
+  <label for="textinput">Nombre:</label>
+  <input name="textinput" type="text" id="textinput" value="" />
+  </div>
+  
+   <div data-role="fieldcontain">
+  <label for="passwordinput">Contraseña:</label>
+  <input name="passwordinput" type="password" id="passwordinput" value="" />
+  </div>
+  
+  <div data-role="fieldcontain">
+  <label for="email">Email:</label>
+  <input name="email" type="email" id="email" value="" />
+  </div>
+  
+    <div data-role="fieldcontain">
+  <label for="number">Número:</label>
+  <input name="number" type="number" id="number" value="" />
+  </div>
+  
+    <div data-role="fieldcontain">
+  <label for="slider">Valor:</label>
+  <input name="slider" type="range" id="slider" value="0" min="0" max="100" />
+  </div>
+  
+  
+    <div data-role="fieldcontain">
+  <label for="date">Fecha:</label>
+  <input name="date" type="date" id="date" value="" />
+  </div>
+  
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Gusto</legend>
+        <input type="checkbox" name="color" id="rojo" class="custom" value="" />
+        <label for="rojo">Rojo</label>
+        <input type="checkbox" name="color" id="azul" class="custom" value="" />
+        <label for="azul">Azul</label>
+      </fieldset>
+    </div>
+    
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup">
+        <legend>Estado</legend>
+        <input type="radio" name="estado" id="soltero" value="" />
+        <label for="soltero">Soltero</label>
+        <input type="radio" name="estado" id="casado" value="" />
+        <label for="casado">Casado</label>
+      </fieldset>
+    </div>
+    
+    <div data-role="fieldcontain">
+      <label for="flipswitch">Envío mails:</label>
+      <select name="flipswitch" id="flipswitch" data-role="slider">
+        <option value="off">Desactivado</option>
+        <option value="on">Activado</option>
+      </select>
+    </div>
+    
+    <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup">
+      <label for="selectmenu" class="select">Edad:</label>
+      
+     <!-- <select name="selectmenu" id="selectmenu">
+        <option value="option1">Niño</option>
+        <option value="option2">Joven</option>
+        <option value="option3">Maduro</option>
+        <option value="option4">Anciano</option>
+      </select> -->
+      
+      
+      <select name="selectmenu2" id="selectmenu2" data-native-menu="false" multiple>
+        <option value="0" data-placeholder="true">Niño</option>
+        <option value="1">0-6</option>
+        <option value="2">7-15</option>
+      </select>
+      
+      <select name="selectmenu3" id="selectmenu3" data-native-menu="false">
+        <option value="0" data-placeholder="true">Joven</option>
+        <option value="3">16-20</option>
+        <option value="4">20-35</option>
+      </select>
+      
+      <select name="selectmenu4" id="selectmenu4" data-native-menu="false">
+        <option value="0" data-placeholder="true">Adulto</option>
+        <option value="5">35-45</option>
+        <option value="6">45-</option>
+      </select>
+      
+      </fieldset>
+    </div>
+    
+    <input type="submit" value="Enviar" />
+  
+  
+  
+  
+  
+  </form>
+  </div>
+  
+  <div data-role="footer">
+    <h4>Pie</h4>
+  </div>
+</div>
+
+<div data-role="page" id="page11">
+  <div data-role="header">
+    <h1>PhoneGap</h1>
+  </div>
+  
+  <div data-role="content">
+  <ul data-role="listview">
+  <li><a href="#acelerometro">Acelerómetro</a></li>
+  </ul>
+  
+  <div data-role="content" id="resultado">
+  Test 1.0
+  </div>
+  
+  </div>
+  
+   <div data-role="footer" data-position="fixed" data-id="footerAPP">
+		<div data-role="navbar">
+        <ul>
+          <li><a href="#" data-icon="home" data-role="button">Home</a></li>
+          <li><a href="#page5" data-rel="dialog" data-icon="info" data-role="button">Info</a></li>
+          <li><a href="#" data-icon="arrow-r" data-role="button">Sig.</a></li>
+        </ul>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
