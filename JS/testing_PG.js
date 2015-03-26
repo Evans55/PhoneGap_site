@@ -116,5 +116,27 @@ function uploadFile(mediaFile){
 
 
 
+function geo(){
+	
+	$("#resultado3").html("esperando el GPS");
+	var watch = navigator.geolocation.watchPosition(onInfo2, onError2, { timeout: 30000});
+	
+	}
 
 
+function onInfo2(){
+	$("#resultado3").html('Latitud: '  +  position.coords.latitude + '<br>' + 
+	'Longitud: '  +  position.coords.longitude + '<br>' + 
+	'Altitud: '  +  position.coords.altitude + '<br>' + 
+	'Accuracy: '  +  position.coords.accuracy + '<br>' + 
+	'Altitud Accuracy: '  +  position.coords.altitudeAccuracy + '<br>' + 
+	'Heading: '  +  position.coords.heading + '<br>' + 
+	'Speed: '  +  position.coords.speed + '<br>' + 
+	'Timestamp: '  +  position.coords.timestamp + '<br>'
+	);
+	
+}
+
+function onError2(){
+	$("#resultado3").html('code: ' + error.code + '<br>'  +  'message: ' + error.message);
+}
