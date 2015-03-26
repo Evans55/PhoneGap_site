@@ -488,7 +488,10 @@ $("#page11").live('pageinit',acelerometro());
 <div data-role="page" id="page12">
 
 <script type="text/javascript">
-$("#page12").live('pageinit',notificaciones);
+$("#page12").live('pageinit',function(event){
+  alert( 'This page was just enhanced by jQuery Mobile!' );
+});
+
 </script>
 
   <div data-role="header">
@@ -536,7 +539,29 @@ $("#page13").live('pageinit',capturas);
   <div data-role="page" id="page14">
 
 <script type="text/javascript">
-$("#page14").live('pageinit',geo);
+$("#page14").live('pageinit',function(event){
+  
+  $("#resultado3").html("esperando el GPS");
+	var watch = navigator.geolocation.watchPosition(onInfo2, onError2, { timeout: 30000});
+	
+	function onInfo2(info){
+	$("#resultado3").html('Latitud: '  +  info.coords.latitude + '<br>' + 
+	'Longitud: '  +  info.coords.longitude + '<br>' + 
+	'Altitud: '  +  info.coords.altitude + '<br>' + 
+	'Accuracy: '  +  info.coords.accuracy + '<br>' + 
+	'Altitud Accuracy: '  +  info.coords.altitudeAccuracy + '<br>' + 
+	'Heading: '  +  info.coords.heading + '<br>' + 
+	'Speed: '  +  info.coords.speed + '<br>' + 
+	'Timestamp: '  +  info.coords.timestamp + '<br>'
+	);
+	
+}
+
+function onError2(){
+	$("#resultado3").html('code: ' + error.code + '<br>'  +  'message: ' + error.message);
+}
+  
+});
 </script>
 
   <div data-role="header">
