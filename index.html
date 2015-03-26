@@ -42,7 +42,7 @@
          <li><a href="#page10" data-transition="slide">Formularios</a></li>
          <li><a href="#page11" data-role="button" data-rel="dialog">Acelerómetro</a></li>
          <li><a href="#page12" data-role="button" data-rel="dialog">Notificaciones</a></li>
-
+     <li><a href="#page13" data-role="button" data-rel="dialog">Capturas</a></li>
 
 		</ul>		
 	</div>
@@ -510,7 +510,24 @@ Test 2.0
   </div>
   
  
+  <div data-role="page" id="page13">
+
+<script type="text/javascript">
+$("#page13").live('pageinit',capturas);
+</script>
+
+  <div data-role="header">
+    <h1>Capturas</h1>
+  </div>
   
+  <div data-role="content">
+       
+<button id="b_captura">Captura</button>
+
+       </div>
+       
+       
+  </div>
 
   
 </div>

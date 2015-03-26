@@ -39,11 +39,11 @@ $("#b_alerta").bind("tap", function(){
 });
 
 $("#b_confirmacion").bind("tap", function(){
-	navigator.notification.confirm("Esto es una confirmación", confirmCallback, "Confirmación", ["Si","No"]);	
+	navigator.notification.confirm("Esto es una confirmación", confirmCallback, "Confirmación", ["Si","No"])
 });
 
 $("#b_prompt").bind("tap", function(){
-	navigator.notification.prompt("Esto es un prompt", promptCallback, "Prompt", ["Si","Cancelar"], "Tu dirás...");
+	navigator.notification.prompt("Esto es un prompt", promptCallback, "Prompt", ["Si","Cancelar"], "Tu dirás...")
 });
 
 $("#b_ruido").bind("tap", function(){
@@ -66,3 +66,55 @@ function confirmCallback(buttonIndex){
 function promptCallback(buttonIndex, input){
 	$("#resultado2").append("Ha habido un prompt y han pulsado el botón " + buttonIndex + " han escrito" + input + "<br>");	
 }
+
+
+
+function capturas(){
+	
+$("#b_captura").bind("tap", function() {
+navigator.device.capture.captureImage(captureSuccess, CaptureError, {limit:1});	
+/*navigator.device.capture.supportedImageModes
+	
+navigator.device.capture.captureAudio(captureSuccess, CaptureError, {limit:2});
+navigator.device.capture.supportedAudioModes
+
+navigator.device.capture.captureVide(captureSuccess, CaptureError, {limit:2});
+navigator.device.capture.supportedVideoModes*/
+
+	
+});
+	
+}
+
+
+function captureSuccess(mediaFiles){
+	var i, len;
+	for(i=0, len=mediaFiles.length; i<len; i +=1){
+		uploadFile(mediaFiles[i]);
+	}
+	
+}
+
+
+function uploadFile(mediaFile){
+	var ft = new FileTransfer(),
+	path = mediaFile.fullPath,
+	name = mediaFile.name;	
+	
+	ft.upload(path,
+	"http://my.domain.com/upload.php",
+	function(result){
+		console.log('Upload success: ' + result.responseCode);
+		console.log(result.bytesSent + ' bytes sent');
+	},
+	function(error){
+		console.log('Error uploading file' + path + ': ' + error.code);
+	},
+	{ fileName: name});
+	
+}
+
+
+
+
+
