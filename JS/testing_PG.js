@@ -32,7 +32,7 @@ function onError() {
 
 
 function notificaciones(){
-$("#resultado2").html("Área de notificaciones");
+
 
 $("#b_alerta").bind("tap", function(){
 	navigator.notification.alert("Esto es una alerta",alertCallback,"Alerta!","ciérrame");	
@@ -52,6 +52,9 @@ $("#b_ruido").bind("tap", function(){
 });
 
 
+}
+
+
 function alertCallback(){
 	$("#resultado2").append("La alerta se ha cerrado<br>");	
 }
@@ -63,6 +66,3 @@ function confirmCallback(buttonIndex){
 function promptCallback(buttonIndex, input){
 	$("#resultado2").append("Ha habido un prompt y han pulsado el botón " + buttonIndex + " han escrito" + input + "<br>");	
 }
-
-}
-
