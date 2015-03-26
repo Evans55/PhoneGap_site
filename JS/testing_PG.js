@@ -124,15 +124,15 @@ function geo(){
 	}
 
 
-function onInfo2(){
-	$("#resultado3").html('Latitud: '  +  position.coords.latitude + '<br>' + 
-	'Longitud: '  +  position.coords.longitude + '<br>' + 
-	'Altitud: '  +  position.coords.altitude + '<br>' + 
-	'Accuracy: '  +  position.coords.accuracy + '<br>' + 
-	'Altitud Accuracy: '  +  position.coords.altitudeAccuracy + '<br>' + 
-	'Heading: '  +  position.coords.heading + '<br>' + 
-	'Speed: '  +  position.coords.speed + '<br>' + 
-	'Timestamp: '  +  position.coords.timestamp + '<br>'
+function onInfo2(info){
+	$("#resultado3").html('Latitud: '  +  info.coords.latitude + '<br>' + 
+	'Longitud: '  +  info.coords.longitude + '<br>' + 
+	'Altitud: '  +  info.coords.altitude + '<br>' + 
+	'Accuracy: '  +  info.coords.accuracy + '<br>' + 
+	'Altitud Accuracy: '  +  info.coords.altitudeAccuracy + '<br>' + 
+	'Heading: '  +  info.coords.heading + '<br>' + 
+	'Speed: '  +  info.coords.speed + '<br>' + 
+	'Timestamp: '  +  info.coords.timestamp + '<br>'
 	);
 	
 }
