@@ -23,7 +23,7 @@
 <script src="JS/testing_PG.js" type="text/javascript"></script>
 
 </head> 
-<body> 
+<body onLoad="onBodyLoad()"> 
 
 <div data-role="page" id="page" data-theme="a">
 	<div data-role="header">
@@ -44,7 +44,7 @@
          <li><a href="#page12" data-role="button" data-rel="dialog">Notificaciones</a></li>
      <li><a href="#page13" data-role="button" data-rel="dialog">Capturas</a></li>
       <li><a href="#page14" data-role="button" data-rel="dialog">Geolocalización</a></li>
-
+<li><a href="#audio" data-transition="slide">Audio</a></li>
 		</ul>		
 	</div>
 	<div data-role="footer" data-position="fixed" data-id="footerAPP">
@@ -488,10 +488,7 @@ $("#page11").live('pageinit',acelerometro());
 <div data-role="page" id="page12">
 
 <script type="text/javascript">
-$("#page12").live('pageinit',function(event){
-  alert( 'This page was just enhanced by jQuery Mobile!' );
-});
-
+$("#page12").live('pageinit',notificaciones);
 </script>
 
   <div data-role="header">
@@ -539,29 +536,7 @@ $("#page13").live('pageinit',capturas);
   <div data-role="page" id="page14">
 
 <script type="text/javascript">
-$("#page14").live('pageinit',function(event){
-  
-  $("#resultado3").html("esperando el GPS");
-	var watch = navigator.geolocation.watchPosition(onInfo2, onError2, { timeout: 30000});
-	
-	function onInfo2(info){
-	$("#resultado3").html('Latitud: '  +  info.coords.latitude + '<br>' + 
-	'Longitud: '  +  info.coords.longitude + '<br>' + 
-	'Altitud: '  +  info.coords.altitude + '<br>' + 
-	'Accuracy: '  +  info.coords.accuracy + '<br>' + 
-	'Altitud Accuracy: '  +  info.coords.altitudeAccuracy + '<br>' + 
-	'Heading: '  +  info.coords.heading + '<br>' + 
-	'Speed: '  +  info.coords.speed + '<br>' + 
-	'Timestamp: '  +  info.coords.timestamp + '<br>'
-	);
-	
-}
-
-function onError2(){
-	$("#resultado3").html('code: ' + error.code + '<br>'  +  'message: ' + error.message);
-}
-  
-});
+$("#page14").live('pageinit',geo);
 </script>
 
   <div data-role="header">
@@ -577,6 +552,28 @@ function onError2(){
  
 </div>
 
+
+<div data-role="page" id="audio">
+
+<!--<script type="text/javascript">
+$("#audio").live('pageinit', audio);
+</script> -->
+
+  <div data-role="header">
+    <h1>Audio</h1>
+  </div>
+  
+  <div data-role="content">
+       
+       <button id="b_playAudio">play</button>
+       <button id="b_stopAudio">stop</button>
+
+ <div data-role="content" id="resultadoAudio">
+  </div>
+  
+       </div>
+ 
+</div>
 
 
 </body>
