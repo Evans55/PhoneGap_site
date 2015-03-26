@@ -31,19 +31,19 @@ function onError() {
 };
 
 
-function notificaciones(notification){
+function notificaciones(){
 $("#resultado2").html("Área de notificaciones");	
 
 $("#b_alerta").bind("tap", function(){
-	navigator.notification.alert("Esto es una alerta",alertCallback,"Alerta!","ciérrame");	
+	navigator.notification.alert("Esto es una alerta", alertCallback, "Alerta!", "ciérrame");	
 });
 
 $("#b_confirmacion").bind("tap", function(){
-	navigator.notification.confirm("Esto es una confirmación",confirmCallback,"Confirmación",["Si","No"]);	
+	navigator.notification.confirm("Esto es una confirmación", confirmCallback, "Confirmación", ["Si","No"]);	
 });
 
 $("#b_prompt").bind("tap", function(){
-	navigator.notification.prompt("Esto es un prompt",promptCallback,"Prompt",["Si","Cancelar"],"Tu dirás...");
+	navigator.notification.prompt("Esto es un prompt", promptCallback, "Prompt", ["Si","Cancelar"], "Tu dirás...");
 });
 
 $("#b_ruido").bind("tap", function(){
