@@ -13,7 +13,7 @@ var watch=navigator.accelerometer.watchAcceleration(onInfo,onError,{frequency:20
 
 //navigator.accelerometer.clearWatch(watch);
 
-var media = new Media(src, recordAudio);
+
 
 }
 
@@ -31,21 +31,38 @@ function onError() {
 };
 
 
-// Record audio
-//
-function recordAudio() {
-    var src = "Ellie Goulding-Outside.mp3";
-    var mediaRec = new Media(src,
-        // success callback
-        function() {
-            console.log("recordAudio():Audio Success");
-        },
+function notificaciones(){
+$("#resultado2").html("Área de notificaciones");
 
-        // error callback
-        function(err) {
-            console.log("recordAudio():Audio Error: "+ err.code);
-        });
+$("#b_alerta").bind("tap", function(){
+	navigator.notification.alert("Esto es una alerta",alertCallback,"Alerta!","ciérrame");	
+});
 
-    // Record audio
-    mediaRec.startRecord();
+$("#b_confirmacion").bind("tap", function(){
+	navigator.notification.confirm("Esto es una confirmación",confirmCallback,"Confirmación",["Si","No"])	
+});
+
+$("#b_prompt").bind("tap", function(){
+	navigator.notification.prompt("Esto es un prompt",promptCallback,"Prompt",["Si","Cancelar"],"Tu dirás...")	
+});
+
+$("#b_ruido").bind("tap", function(){
+	navigator.notification.beep(2);	
+	navigator.notification.vibrate(1000);	
+});
+
+
+function alertCallback(){
+	$("#resultado2").append("La alerta se ha cerrado<br>");	
 }
+
+function confirmCallback(buttonIndex){
+	$("#resultado2").append("Ha habido una confirmación y han pulsado el botón " + buttonIndex + "<br>");	
+}
+
+function promptCallback(buttonIndex, input){
+	$("#resultado2").append("Ha habido un prompt y han pulsado el botón " + buttonIndex + " han escrito" + input + "<br>");	
+}
+
+}
+

@@ -41,6 +41,8 @@
           <li><a href="#page9" data-transition="slide">Listas</a></li>
          <li><a href="#page10" data-transition="slide">Formularios</a></li>
          <li><a href="#page11" data-transition="slide">Acelerómetro</a></li>
+         <li><a href="#page12" data-transition="slide">Notificaciones</a></li>
+
 
 		</ul>		
 	</div>
@@ -474,6 +476,38 @@
         </ul>
         </div>
 	</div>
+</div>
+
+
+<div data-role="page" id="page12">
+
+<script type="text/javascript">
+$("#page12").live('pageinit',notificaciones);
+</script>
+
+  <div data-role="header">
+    <h1>Notificaciones</h1>
+  </div>
+  
+  <div data-role="content">
+       <div class="ui-grid-a">
+          <div class="ui-block-a"><button id="b_alerta">Alerta</button></div>
+          <div class="ui-block-b"><button id="b_confirmacion">Confirmación</button></div>
+          <div class="ui-block-a"><button id="b_prompt">Prompt</button></div>
+          <div class="ui-block-b"><button id="b_ruido">Ruido</button></div>
+
+
+       </div>
+  </div>
+  
+    <div data-role="content" id="resultado2">
+ 
+  </div>
+  
+  <div data-role="footer">
+    <h4>Pie</h4>
+  </div>
+  
 </div>
 
 
