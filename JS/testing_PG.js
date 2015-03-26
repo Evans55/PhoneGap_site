@@ -1,10 +1,10 @@
 // JavaScript Document
-
+/*
 function onBodyLoad(){
 document.addEventListener("deviceready", onDeviceReady, false);	
-}
+}*/
 
-function onDeviceReady(){
+function acelerometro(){
 $("#resultado").html("PhoneGap está en marcha");	
 
 //navigator.accelerometer.getCurrentAcceleration(onInfo,onError);
