@@ -32,7 +32,7 @@ function onError() {
 
 
 function notificaciones(notification){
-
+$("#resultado2").html("Área de notificaciones");	
 
 $("#b_alerta").bind("tap", function(){
 	navigator.notification.alert("Esto es una alerta",alertCallback,"Alerta!","ciérrame");	
