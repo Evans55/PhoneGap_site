@@ -439,11 +439,7 @@
     </div>
     
     <input type="submit" value="Enviar" />
-  
-  
-  
-  
-  
+
   </form>
   </div>
   
@@ -565,8 +561,10 @@ $("#audio").live('pageinit', audio);
   
   <div data-role="content">
        
-       <button id="b_playAudio">play</button>
-       <button id="b_stopAudio">stop</button>
+       
+        <a href="#" class="btn large" onclick="playAudio('file:///android_asset/www/audio/Ellie Goulding-Outside.mp3');">Pause Playing Audio</a>
+        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+        <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
 
  <div data-role="content" id="resultadoAudio">
   </div>
